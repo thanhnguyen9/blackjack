@@ -19,8 +19,6 @@ class Card
 
 end
 
-
-
 class Deck
 
   @@cards = []
@@ -37,7 +35,6 @@ class Deck
     end
     @@card.shuffle!
   end
-
 
   def self.deal_card
     @@cards.shift
@@ -80,6 +77,7 @@ end
 
 class Game
   attr_accessor :cards_player
+
   def initialize
     @player = Hand.new "Thanh"
     @dealer = Hand.new "Dealer"
@@ -144,7 +142,6 @@ class Game
       end
       p "*********************"
 
-
       #Keep getting card if player and dealer draw
 
       if @player.total == @dealer.total
@@ -178,13 +175,6 @@ class Game
 end
 
 Deck.build_cards
-
 Deck.deal_card
 game = Game.new
-#thanh = Hand.new "Thanh"
-# #dealer = Hand.new "Dealer"
-#thanh.show
-# #dealer.show
-# thanh.hit
-
 game.pass_card
